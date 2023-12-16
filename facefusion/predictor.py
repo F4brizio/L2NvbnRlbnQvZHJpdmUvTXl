@@ -44,7 +44,8 @@ def predict_frame(frame : Frame) -> bool:
 	image = opennsfw2.preprocess_image(image, opennsfw2.Preprocessing.YAHOO)
 	views = numpy.expand_dims(image, axis = 0)
 	_, probability = get_predictor().predict(views)[0]
-	return probability > MAX_PROBABILITY
+	return False
+	#return probability > MAX_PROBABILITY
 
 
 @lru_cache(maxsize = None)
